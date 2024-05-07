@@ -1,7 +1,12 @@
 import { Button } from "@/components/atoms";
 import { MOCK_PRINCING } from "./mock";
+import { PHONE } from "@/config";
 
 export function Pricing() {
+  const sendMessage = (pricing: { title: string; priceText: string }) => {
+    const message = `Deseo el sistema Factura Pro con el plan ${pricing?.title} de ${pricing?.priceText}`;
+    window.open(`https://api.whatsapp.com/send?phone=${PHONE}&text=${encodeURIComponent(message)}`, "_blank");
+  };
   return (
     <section className="w-full min-h-screen bg-[#282C34] py-8 flex  items-center">
       <div className="w-full mx-auto max-w-[75rem] px-6 xl:px-0">
@@ -10,9 +15,9 @@ export function Pricing() {
         </h2>
         <div className="grid [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))] gap-7 w-full justify-items-center  mt-12">
           {MOCK_PRINCING?.map((princingItem) => (
-            <article key={princingItem?.title} className="border-[1px] border-primary-500 gap-3 flex flex-col justify-between rounded-xl px-6 py-8 w-full">
+            <article key={princingItem?.title} className="border-[1px] border-primary-500 gap-3 flex flex-col justify-between rounded-xl px-5 py-7 w-full">
               <div className="w-full flex flex-col gap-3">
-                <h2 className="text-[3.75rem] text-primary-500 text-center">{princingItem?.title}</h2>
+                <h2 className="text-5xl text-primary-500 text-center">{princingItem?.title}</h2>
                 <h2 className="text-3xl text-white text-center">{princingItem?.priceText}</h2>
                 <p className="text-white text-center">{princingItem?.subTitle}</p>
                 <p className="text-center text-gray-400">
@@ -24,7 +29,9 @@ export function Pricing() {
                   {princingItem?.priceForMount}
                 </p>
               </div>
-              <Button isFull>{princingItem?.buttonText}</Button>
+              <Button onClick={() => sendMessage({ title: princingItem?.title, priceText: princingItem?.priceText })} isFull>
+                {princingItem?.buttonText}
+              </Button>
             </article>
           ))}
         </div>

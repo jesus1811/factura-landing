@@ -8,7 +8,7 @@ export function Hero() {
             <span className="text-primary-500"> para emprendedores</span>
           </h2>
           <p data-aos="fade-up" className="text-xl text-center text-white">
-            con sistema de inventario e impresion de facturas / bolettas
+            con sistema de inventario e impresion de facturas y boletas
           </p>
         </div>
         <figure className="flex-1 h-auto">

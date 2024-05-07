@@ -17,7 +17,7 @@ export function Header() {
               {mockItem?.label}
             </Link>
           ))}
-          <Button>Probar la demo</Button>
+          <Button onClick={() => window.open("https://factura-pro.vercel.app", "_blank")}>Probar la demo</Button>
         </nav>
       </div>
     </section>
