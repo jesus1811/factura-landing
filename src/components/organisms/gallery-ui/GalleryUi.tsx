@@ -1,4 +1,4 @@
-import { Button } from "@/components/atoms";
+import { Button, Title } from "@/components/atoms";
 import { PHONE } from "@/config";
 import { MouseEventHandler } from "react";
 import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
@@ -26,22 +26,21 @@ export function GalleryUi() {
   return (
     <section className="w-full min-h-screen bg-neutral-500 py-8 flex  items-center">
       <div className="w-full mx-auto max-w-[75rem] px-6 xl:px-0">
-        <h2 data-aos="fade-up" className="text-[3.75rem] text-center text-white leading-[70px]">
+        <Title data-aos="fade-up" className="text-center">
           <span className="text-primary-500">Panel de control</span> con un diseño <span className="text-primary-500">intuitivo</span> y simple que <span className="text-primary-500">facilita</span>{" "}
           su uso
-        </h2>
-        <div className="w-full mt-5">
+        </Title>
+        <div className="w-full mt-6">
           <ImageGallery
             items={images}
             autoPlay={true}
             showPlayButton={false} // Ocultar botón de reproducción automática
-            showFullscreenButton={false} // Ocultar botón de pantalla completa
             renderLeftNav={(onClick) => (
               <button
                 onClick={onClick}
                 className="top-[50%] absolute  z-10 left-0 translate-y-[-50%] hover:scale-125 cursor-pointer transition-all duration-[.4s] stroke-white hover:stroke-primary-500"
               >
-                <svg className="w-[60px] aspect-square " xmlns="http://www.w3.org/2000/svg" viewBox="6 0 12 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <svg className="w-8 xl:w-[60px] aspect-square " xmlns="http://www.w3.org/2000/svg" viewBox="6 0 12 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
               </button>
@@ -51,7 +50,7 @@ export function GalleryUi() {
                 onClick={onClick}
                 className="top-[50%] absolute z-10 right-0 translate-y-[-50%]  hover:scale-125 cursor-pointer transition-all duration-[.4s] stroke-white hover:stroke-primary-500"
               >
-                <svg className="w-[60px] aspect-square " xmlns="http://www.w3.org/2000/svg" viewBox="6 0 12 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <svg className="w-8 xl:w-[60px] aspect-square " xmlns="http://www.w3.org/2000/svg" viewBox="6 0 12 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>

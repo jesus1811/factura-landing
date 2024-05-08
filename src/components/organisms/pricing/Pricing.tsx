@@ -1,4 +1,4 @@
-import { Button } from "@/components/atoms";
+import { Button, Title } from "@/components/atoms";
 import { MOCK_PRINCING } from "./mock";
 import { PHONE } from "@/config";
 
@@ -7,17 +7,18 @@ export function Pricing() {
     const message = `Deseo el sistema Factura Pro con el plan ${pricing?.title} de ${pricing?.priceText}`;
     window.open(`https://api.whatsapp.com/send?phone=${PHONE}&text=${encodeURIComponent(message)}`, "_blank");
   };
+
   return (
     <section className="w-full min-h-screen bg-[#282C34] py-8 flex  items-center">
       <div className="w-full mx-auto max-w-[75rem] px-6 xl:px-0">
-        <h2 data-aos="fade-up" className="text-[3.75rem] text-center text-white leading-[70px]">
+        <Title data-aos="fade-up" className="text-center">
           Elige el plan que se <span className="text-primary-500">adapta</span> a tu nesesidad
-        </h2>
-        <div className="grid [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))] gap-7 w-full justify-items-center  mt-12">
+        </Title>
+        <div className="grid xl:[grid-template-columns:repeat(auto-fit,minmax(18.75rem,1fr))] [grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))] gap-7 w-full justify-items-center  mt-12">
           {MOCK_PRINCING?.map((princingItem) => (
             <article key={princingItem?.title} className="border-[1px] border-primary-500 gap-3 flex flex-col justify-between rounded-xl px-5 py-7 w-full">
               <div className="w-full flex flex-col gap-3">
-                <h2 className="text-5xl text-primary-500 text-center">{princingItem?.title}</h2>
+                <Title className="!text-4xl text-center !text-primary-500">{princingItem?.title}</Title>
                 <h2 className="text-3xl text-white text-center">{princingItem?.priceText}</h2>
                 <p className="text-white text-center">{princingItem?.subTitle}</p>
                 <p className="text-center text-gray-400">
