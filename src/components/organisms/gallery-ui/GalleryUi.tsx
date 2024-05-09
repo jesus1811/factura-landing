@@ -11,16 +11,16 @@ export function GalleryUi() {
 
   const images: ReactImageGalleryItem[] = [
     {
-      original: "/shops.png",
-      thumbnail: "/shops.png",
+      original: "/gallery1.png",
+      thumbnail: "/gallery1.png",
     },
     {
-      original: "/shops.png",
-      thumbnail: "/shops.png",
+      original: "/gallery2.png",
+      thumbnail: "/gallery2.png",
     },
     {
-      original: "/shops.png",
-      thumbnail: "/shops.png",
+      original: "/gallery3.png",
+      thumbnail: "/gallery3.png",
     },
   ];
   return (
@@ -33,7 +33,7 @@ export function GalleryUi() {
         <div className="w-full mt-6">
           <ImageGallery
             items={images}
-            autoPlay={true}
+            // autoPlay={true}
             showPlayButton={false} // Ocultar botón de reproducción automática
             renderLeftNav={(onClick) => (
               <button
